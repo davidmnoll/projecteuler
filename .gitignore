@@ -1,5 +1,4 @@
 /*
 !.gitignore
 !py
-!*/*.hs
-!*/*
+!hs
