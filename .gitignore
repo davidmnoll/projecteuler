@@ -1,4 +1,6 @@
 /*
 !.gitignore
+!py/*
+!hask/*
 !py
 !hask
