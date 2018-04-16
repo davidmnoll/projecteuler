@@ -12,3 +12,4 @@ biggestPalFromNums x y =
         isPal [] = True
         isPal (x : []) = True
         isPal (x : xs) = (x == (last xs) ) && isPal (init xs )
+        
