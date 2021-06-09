@@ -4,6 +4,7 @@ import Control.Exception
 import System.Environment
 import Prob4 ( palFromDigits )
 import Prob5 ( sMultiple )
+import Prob6 (sqDiff)
 import Prob7 ( nthPrime )
 import Prob8 ( adjacentDigitsMaxProd )
 
@@ -13,7 +14,7 @@ main :: IO ()
 main = do
     args <- getArgs
     case parseArgs args of
-        Nothing -> doMOutput "Prob8" ( adjacentDigitsMaxProd 13)
+        Nothing -> doOutput "Prob6" (sqDiff 100)
         Just (4) -> doOutput "Prob4" (palFromDigits 3)
         Just (5) -> doOutput "Prob5" (sMultiple 20)
         Just (7) -> doOutput "Prob7" (nthPrime 10001) 
