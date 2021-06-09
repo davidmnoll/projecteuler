@@ -28,7 +28,8 @@ library
       Lib
       Prob4
       Prob5
-      Prob6
+      Prob7
+      Prob8
   other-modules:
       Paths_pe
   hs-source-dirs:

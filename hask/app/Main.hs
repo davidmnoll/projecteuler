@@ -1,23 +1,42 @@
 module Main where
 
-import Prob4
-import Prob5
-import Prob6
+import Control.Exception
+import System.Environment
+import Prob4 ( palFromDigits )
+import Prob5 ( sMultiple )
+import Prob7 ( nthPrime )
+import Prob8 ( adjacentDigitsMaxProd )
+
+
 
 main :: IO ()
 main = do
-    putStrLn "Prob4"
-    putStrLn "==="
-    putStrLn (show (palFromDigits 3))
+    args <- getArgs
+    case parseArgs args of
+        Nothing -> doMOutput "Prob8" ( adjacentDigitsMaxProd 13)
+        Just (4) -> doOutput "Prob4" (palFromDigits 3)
+        Just (5) -> doOutput "Prob5" (sMultiple 20)
+        Just (7) -> doOutput "Prob7" (nthPrime 10001) 
+        Just (8) -> doMOutput "Prob8" ( adjacentDigitsMaxProd 13)
+        Just x  
+            | x > 0 -> error "Problem not implemented"
+            | otherwise -> error "Problem not valid"
 
-    putStrLn "Prob5"
+-- data CommandError = CommandError String
+-- parseArgs :: [String] -> Either ParseError ( Maybe Int )
+parseArgs :: [String] -> Maybe Integer
+parseArgs [x] = Just (read x :: Integer)
+parseArgs (x : xs) =  error ("Too Many Args -- " ++ show (x : xs))
+parseArgs [] = Nothing
+
+doOutput :: Show a => String -> a -> IO ()
+doOutput x y = do
+    putStrLn x
     putStrLn "==="
-    -- WORKS BUT VERY SLOW
-    -- putStrLn (show (smallestMultiple 20))
-    putStrLn "Prob5 -opt"
+    print y
+
+doMOutput x y = do
+    putStrLn x
     putStrLn "==="
-    -- MUCH FASTER
-    putStrLn (show (sMultiple 20))
-    putStrLn "Prob6"
-    putStrLn "==="
-    putStrLn (show (nthPrime 10001))
+    s <- y
+    putStrLn (show s)

@@ -1,4 +1,4 @@
-module Prob6 where
+module Prob7 where
 import Debug.Trace
 
 nthPrime :: Int -> Int
