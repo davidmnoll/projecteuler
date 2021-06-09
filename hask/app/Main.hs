@@ -17,6 +17,7 @@ main = do
         Just (4) -> doOutput "Prob4" (palFromDigits 3)
         Just (5) -> doOutput "Prob5" (sMultiple 20)
         Just (7) -> doOutput "Prob7" (nthPrime 10001) 
+        Just (6) -> doOutput "Prob6" (sqDiff 100)
         Just (8) -> doMOutput "Prob8" ( adjacentDigitsMaxProd 13)
         Just x  
             | x > 0 -> error "Problem not implemented"

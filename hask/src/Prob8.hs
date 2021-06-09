@@ -6,9 +6,6 @@ import Control.Monad (forever)
 import Text.Read
 import Debug.Trace
 
--- prob8main :: IO ()
--- prob8main = doOnCharsFromFile "./resource/prob7.txt" ( \x -> putStrLn [x] ) 
-    
 
 
 adjacentDigitsMaxProd z = do
@@ -50,13 +47,6 @@ doOnCharsFromFile fileName f = do
         c <- hGetChar handle
         f c)
 
-
-
--- getDigits = forever $ do 
---     x <- getChar
---     MaxProdAndList(n, m, l) <- addToMPL mpl x
---     m
---     where mpl = MaxProdAndList 0 []
 
 
 
