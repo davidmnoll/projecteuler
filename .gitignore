@@ -1,6 +1,2 @@
-/*
-!.gitignore
-!py/*
-!hask/*
-!py
-!hask
+.stack-work/
+*~
