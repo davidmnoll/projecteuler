@@ -2,6 +2,10 @@ module Main where
 
 import Control.Exception
 import System.Environment
+
+import Prob1 ( mulThreeFive )
+import Prob2 ( evenFibs )
+import Prob3 ( largestPrimeFactor )
 import Prob4 ( palFromDigits )
 import Prob5 ( sMultiple )
 import Prob6 ( sqDiff )
@@ -15,7 +19,10 @@ main :: IO ()
 main = do
     args <- getArgs
     case parseArgs args of
-        Nothing -> doOutput "Prob9" (pyProd 1000)
+        Nothing -> doOutput "Prob1" (mulThreeFive 1000)
+        Just (1) -> doOutput "Prob1" (mulThreeFive 1000)
+        Just (2) -> doOutput "Prob2" (evenFibs 3)
+        Just (3) -> doOutput "Prob3" (largestPrimeFactor 2)
         Just (4) -> doOutput "Prob4" (palFromDigits 3)
         Just (5) -> doOutput "Prob5" (sMultiple 20)
         Just (7) -> doOutput "Prob7" (nthPrime 10001) 
