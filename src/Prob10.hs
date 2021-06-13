@@ -33,13 +33,13 @@ primesBetween a b = go [a..b] 2 ( (floor . sqrt . fromIntegral) b)
     where
         go :: [Int] -> Int -> Int -> [Int]
         go [] _ _ = []
-        go xs m l
-            | m > l = xs
-            | otherwise = go (sieveMultiplesofN xs m) (m + 1) l
+        go (x : xs) m l
+            | m > l = (x : xs)
+            | let next = (sieveMultiplesofN xs m), otherwise = x : go next (head next) l
 
 sieveMultiplesofN :: [Int] -> Int -> [Int]
 sieveMultiplesofN [] _ = []
-sieveMultiplesofN ( x : xs ) n = if x `mod` n == 0 && x /= n then (sieveMultiplesofN xs n) else x : (sieveMultiplesofN xs n)
+sieveMultiplesofN ( x : xs ) n = if x `mod` n == 0 then (sieveMultiplesofN xs n) else x : (sieveMultiplesofN xs n)
 
 -- isPrime :: Int -> Bool
 -- isPrime n =
