@@ -12,6 +12,7 @@ import Prob6 ( sqDiff )
 import Prob7 ( nthPrime )
 import Prob8 ( adjacentDigitsMaxProd )
 import Prob9 ( pyProd ) 
+import Prob10 ( sumPrimesLessThan )
 
 
 
@@ -19,16 +20,17 @@ main :: IO ()
 main = do
     args <- getArgs
     case parseArgs args of
-        Nothing -> doOutput "Prob1" (mulThreeFive 1000)
+        Nothing -> doOutput "Prob10" (sumPrimesLessThan 2000000)
         Just (1) -> doOutput "Prob1" (mulThreeFive 1000)
-        Just (2) -> doOutput "Prob2" (evenFibs 3)
-        Just (3) -> doOutput "Prob3" (largestPrimeFactor 2)
+        Just (2) -> doOutput "Prob2" (evenFibs 4000000)
+        Just (3) -> doOutput "Prob3" (largestPrimeFactor 600851475143)
         Just (4) -> doOutput "Prob4" (palFromDigits 3)
         Just (5) -> doOutput "Prob5" (sMultiple 20)
         Just (7) -> doOutput "Prob7" (nthPrime 10001) 
         Just (6) -> doOutput "Prob6" (sqDiff 100)
-        Just (8) -> doMOutput "Prob8" ( adjacentDigitsMaxProd 13)
+        Just (8) -> doMOutput "Prob8" (adjacentDigitsMaxProd 13)
         Just (9) -> doOutput "Prob9" (pyProd 1000)
+        Just (10) -> doOutput "Prob10" (sumPrimesLessThan 2000000)
         Just x  
             | x > 0 -> error "Problem not implemented"
             | otherwise -> error "Problem not valid"
