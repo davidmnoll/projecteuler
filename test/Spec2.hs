@@ -23,7 +23,7 @@ spec = do
         --     slowSumPrimesLessThan 2000000 `shouldBe` 142913828922
     describe "Prob10 - seiveMultiples" $ do
         it "equals [2, 4, 5, 8] for vals [ 2, 3, 6, 4, 5, 9 , 8, 12 ] 3" $ do
-            sieveMultiplesofN [ 2, 3, 6, 4, 5, 9 , 8, 12 ] 3 `shouldBe` [2, 3, 4, 5, 8]
+            sieveMultiplesofN [ 2, 3, 6, 4, 5, 9 , 8, 12 ] 3 `shouldBe` [2, 4, 5, 8]
     describe "Prob10 - opt" $ do
         it "equals 17 for val 10" $ do
             sumPrimesLessThan 10 `shouldBe` 17
